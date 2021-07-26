@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Matthew",
+    "type": "NEW",
+    "bookIndex": 0,
+    "numChapters": 28,
+    "numClicks": 0
+  },
+  {
+    "name": "1 CORINTHIANS",
+    "type": "NEW",
+    "bookIndex": 6,
+    "numChapters": 16,
+    "numClicks": 0
+  },
+  {
+    "name": "Numbers",
+    "type": "OLD",
+    "bookIndex": 20,
+    "numChapters": 36,
+    "numClicks": 0
+  },
+  {
+    "name": "Habakkuk",
+    "type": "OLD",
+    "bookIndex": 51,
+    "numChapters": 3,
+    "numClicks": 0
+  },
+  {
+    "name": "Revelation",
+    "type": "NEW",
+    "bookIndex": 26,
+    "numChapters": 22,
+    "numClicks": 0
+  }
+]

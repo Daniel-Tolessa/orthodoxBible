@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Matthew",
+    "type": "NEW",
+    "bookIndex": 0,
+    "numChapters": 28,
+    "numClicks": 0
+  },
+  {
+    "name": "Mark",
+    "type": "NEW",
+    "bookIndex": 1,
+    "numChapters": 40,
+    "numClicks": 0
+  },
+  {
+    "name": "Luke",
+    "type": "NEW",
+    "bookIndex": 2,
+    "numChapters": 24,
+    "numClicks": 0
+  },
+  {
+    "name": "John",
+    "type": "NEW",
+    "bookIndex": 3,
+    "numChapters": 21,
+    "numClicks": 0
+  },
+  {
+    "name": "Acts",
+    "type": "NEW",
+    "bookIndex": 4,
+    "numChapters": 24,
+    "numClicks": 0
+  },
+  {
+    "name": "Romans",
+    "type": "NEW",
+    "bookIndex": 5,
+    "numChapters": 16,
+    "numClicks": 0
+  },
+  {
+    "name": "1 CORINTHIANS",
+    "type": "NEW",
+    "bookIndex": 6,
+    "numChapters": 16,
+    "numClicks": 0
+  },
+  {
+    "name": "2 CORINTHIANS",
+    "type": "NEW",
+    "bookIndex": 7,
+    "numChapters": 13,
+    "numClicks": 0
+  },
+  {
+    "name": "GALATIANS",
+    "type": "NEW",
+    "bookIndex": 8,
+    "numChapters": 13,
+    "numClicks": 0
+  },
+  {
+    "name": "EPHESIANS",
+    "type": "NEW",
+    "bookIndex": 9,
+    "numChapters": 6,
+    "numClicks": 0
+  },
+  {
+    "name": "PHILIPPIANS",
+    "type": "NEW",
+    "bookIndex": 10,
+    "numChapters": 4,
+    "numClicks": 0
+  },
+  {
+    "name": "COLOSSIANS",
+    "type": "NEW",
+    "bookIndex": 11,
+    "numChapters": 4,
+    "numClicks": 0
+  }
+]
