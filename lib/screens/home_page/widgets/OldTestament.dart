@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'home_widgets.dart';
 
 class OldTestaments extends StatelessWidget {
   // function made to fetch from json

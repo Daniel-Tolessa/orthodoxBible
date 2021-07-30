@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'home_widgets.dart';
 
 class Kontinue_reading extends StatefulWidget {
   @override
@@ -27,12 +27,12 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
             builder: (context, snapshot) {
 
               if (snapshot.hasData) {
-                List<Book> reBooks = snapshot.data;
+                List<Book>? reBooks = snapshot.data as List<Book>?;
                 // List<Book> copyHold = snapshot.data;
                 // if (snapshot.data.length > 5) {
                 //   copyHold = snapshot.data.getRange(0, 4);
                 // }
-                if (snapshot.data.length >= 5) {
+                if (snapshot.data!.length >= 5) {
                   reBooks = snapshot.data.getRange(snapshot.data.length - 5, snapshot.data.length).toList();
                 }
                 return ListView.builder(

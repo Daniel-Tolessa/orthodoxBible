@@ -1,6 +1,7 @@
+import 'database_packages.dart';
 class NoteDatabase {
 
-  Database _database;
+  Database? _database;
 
   Future openDb() async {
     _database = await openDatabase(
@@ -16,13 +17,13 @@ class NoteDatabase {
 
   Future<int> addNote(Note note) async {
     await openDb();
-    return await _database.insert("notes", note.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    return await _database!.insert("notes", note.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Note>> getNotes() async {
     await openDb();
 
-    final List<Map<String, dynamic>> maps = await _database.query('notes');
+    final List<Map<String, dynamic>> maps = await _database!.query('notes');
 
     List<Note> allNotes = List.generate(maps.length, (i) {
       return Note(
@@ -40,19 +41,19 @@ class NoteDatabase {
   Future<int> updateNote(Note note) async {
     await openDb();
 
-    return await _database.update("notes", note.toMap(), where: 'id = ?', whereArgs: [note.id]);
+    return await _database!.update("notes", note.toMap(), where: 'id = ?', whereArgs: [note.id]);
   }
 
   Future<int> deleteNote(int id) async {
     await openDb();
 
-    return await _database.delete("notes", where: 'id = ?', whereArgs: [id]);
+    return await _database!.delete("notes", where: 'id = ?', whereArgs: [id]);
   }
 
   Future<void> deleteAllNotes() async {
     await openDb();
 
-    _database.delete("notes");
+    _database!.delete("notes");
   }
 
 }

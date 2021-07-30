@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'home_widgets.dart';
 
 class NewTestaments extends StatelessWidget {
 
@@ -21,7 +21,7 @@ class NewTestaments extends StatelessWidget {
                 return ListView.builder(
                   //addAutomaticKeepAlives: false,
                     shrinkWrap: true,
-                    itemCount: snapshot.data.length,
+                    itemCount: snapshot.data!.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       Book abook = snapshot.data[index];

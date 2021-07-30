@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import '../notes/TextScreen.dart';
-import 'package:flutter/services.dart' show rootBundle;
-
+import 'widgets/widgets_export.dart';
 
 class MoreDetails extends StatefulWidget {
   @override
@@ -117,7 +114,7 @@ class Details {
   final String body;
   bool isOpen;
 
-  Details({this.header, this.body, this.isOpen = false});
+  Details({required this.header, required this.body, this.isOpen = false});
 }
 
 

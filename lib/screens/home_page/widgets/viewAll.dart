@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'home_widgets.dart';
 
 class viewAll extends StatelessWidget {
   final String jsonLocation;

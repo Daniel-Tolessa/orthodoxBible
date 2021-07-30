@@ -1,12 +1,14 @@
+import 'model_libraries.dart';
+
 class Chapter extends StatelessWidget {
 
-  Book book;
+  Book? book;
 
   Chapter({@required this.book});
 
   Future<String> get localpath async {
     final dir = await getExternalStorageDirectory();
-    return dir.path;
+    return dir!.path;
   }
 
   Future<File> get localFile async {
@@ -28,14 +30,14 @@ class Chapter extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
-        title: Text(book.name),
+        title: Text(book!.name),
         backgroundColor: Colors.grey[800],
         centerTitle: true,
       ),
       body: Container(
         color: Colors.black38,
         child: ListView.separated(
-            itemCount: book.numChapters,
+            itemCount: book!.numChapters,
             separatorBuilder: (BuildContext context, int index) => Divider(thickness: 2.5, height: 5, color: Colors.white,),
             itemBuilder: (Context, index) {
               return ListTile(
@@ -45,14 +47,14 @@ class Chapter extends StatelessWidget {
                 title: Text("Chapter " + (index + 1).toString(), style: TextStyle(color: Colors.white),),
 
                 onTap: () {
-                  writeBook(book);
-                  bookdatabase.insertBook(book);
-                  book.numClicks++;
-                  bookdatabase.updateBook(book);
+                  writeBook(book!);
+                  bookdatabase.insertBook(book!);
+                  book!.numClicks++;
+                  bookdatabase.updateBook(book!);
                   //print(writeBook(book));
                   Navigator.push(context,
                       MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
-                        builder: (context) => TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt"),
+                        builder: (context) => TextScreen("texts/Genesis/chapter1/hello.txt"),
                       )
                   );
 

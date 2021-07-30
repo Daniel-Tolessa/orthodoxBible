@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'model_libraries.dart';
 
 class TextScreen extends StatefulWidget {
 
   String textLocation;
-  TextScreen({this.textLocation});
+  TextScreen(this.textLocation);
   @override
   _TextScreenState createState() => _TextScreenState(textLocation);
 }

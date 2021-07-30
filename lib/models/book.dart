@@ -10,25 +10,26 @@ List<Book> bookFromJson(String str) => List<Book>.from(json.decode(str).map((x) 
 String bookToJson(List<Book> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Book {
-  Book({
+  Book(
     this.name,
     this.type,
     this.bookIndex,
     this.numChapters,
-    this.numClicks,
-  });
+    {this.numClicks = 0}
+      //TODO check if numclicks resets to 0 for every book
+      );
 
   String name;
   String type;
   int bookIndex;
   int numChapters;
-  int numClicks;
+  int numClicks = 0;
 
   factory Book.fromJson(Map<String, dynamic> json) => Book(
-    name: json["name"],
-    type: json["type"],
-    bookIndex: json["bookIndex"],
-    numChapters: json["numChapters"],
+    json["name"],
+    json["type"],
+    json["bookIndex"],
+    json["numChapters"],
     numClicks: json["numClicks"],
   );
 
