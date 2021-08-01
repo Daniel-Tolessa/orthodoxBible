@@ -27,9 +27,9 @@ class NoteDatabase {
 
     List<Note> allNotes = List.generate(maps.length, (i) {
       return Note(
+          maps[i]['title'],
+          maps[i]['description'],
           id: maps[i]['id'],
-          title: maps[i]['title'],
-          description: maps[i]['description']
       );
     });
 

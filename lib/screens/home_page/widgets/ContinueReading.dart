@@ -13,7 +13,7 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
       //TODO figure out what goes in here
     });
     final BookDatabase bookdatabase = new BookDatabase();
-    Book book;
+    Book? book;
     List<Book> recentBooks;
     Future<List<Book>> fetchBooks (BuildContext context) async {
       final jsonstring = await DefaultAssetBundle.of(context).loadString("json/ContinueReading.Json");
@@ -27,12 +27,12 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
             builder: (context, snapshot) {
 
               if (snapshot.hasData) {
-                List<Book>? reBooks = snapshot.data as List<Book>?;
-                // List<Book> copyHold = snapshot.data;
+                //List<Book>? reBooks = snapshot.data as List<Book>?;
+                List<Book> reBooks = snapshot.data;
                 // if (snapshot.data.length > 5) {
                 //   copyHold = snapshot.data.getRange(0, 4);
                 // }
-                if (snapshot.data!.length >= 5) {
+                if (snapshot.data.length >= 5) {
                   reBooks = snapshot.data.getRange(snapshot.data.length - 5, snapshot.data.length).toList();
                 }
                 return ListView.builder(
@@ -44,10 +44,6 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
                     itemBuilder: (context, index) {
                       Book abook = reBooks[index];
                       return ElevatedButton(
-                        // elevation: 30.0,
-                        // color: Colors.black,
-                        // //color: Colors.white,
-                        // padding: EdgeInsets.only(left: 20),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.black,
                         ),
@@ -55,7 +51,7 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) =>
                                   Chapter(book: abook)));
-                          bookdatabase.insertBook(book);
+                          bookdatabase.insertBook(book!);
                           book.numClicks++;
                           bookdatabase.updateBook(book);
                         },
@@ -67,8 +63,6 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
               return Container(child: Text("nothing yet", style: TextStyle(color: Colors.white),),);
             }
         )
-
     );
-
   }
 }

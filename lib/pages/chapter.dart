@@ -1,16 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'dart:io';
-import 'dart:convert';
+import 'package:orthodoxbible/pages/pages_widgets.dart';
 class Chapter extends StatelessWidget {
 
-  Book book;
+  late Book book;
 
-  Chapter({@required this.book});
+  Chapter(this.book);
 
   Future<String> get localpath async {
     final dir = await getExternalStorageDirectory();
-    return dir.path;
+    return dir!.path;
   }
 
   Future<File> get localFile async {
@@ -56,7 +53,7 @@ class Chapter extends StatelessWidget {
                   //print(writeBook(book));
                   Navigator.push(context,
                       MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
-                        builder: (context) => TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt"),
+                        builder: (context) => TextScreen("texts/Genesis/chapter1/hello.txt"),
                       )
                   );
 

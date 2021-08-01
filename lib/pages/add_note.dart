@@ -1,19 +1,19 @@
-import 'package:flutter/material.dart';
-
+import 'package:orthodoxbible/pages/pages_widgets.dart';
 class AddNotePage extends StatefulWidget {
   @override
   _AddNotePageState createState() => _AddNotePageState();
-  final String edited_text;
-  final String edited_description;
-  AddNotePage({required this.edited_text, required this.edited_description});
+  //changed type from Final to late so the same text would be able to updated
+  late String edited_text;
+  late String edited_description;
+  AddNotePage({this.edited_text = "", this.edited_description = ""});
 }
 
 class _AddNotePageState extends State<AddNotePage> {
   final NoteDatabase notedatabase = new NoteDatabase();
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
-  String title;
-  String description;
+  late String title;
+  late String description;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +54,6 @@ class _AddNotePageState extends State<AddNotePage> {
                   hintText: "Enter description",
                   border: InputBorder.none,
                 ),
-
               ),
             )
           ],
@@ -66,7 +65,7 @@ class _AddNotePageState extends State<AddNotePage> {
             title = titleController.text;
             description = descriptionController.text;
           });
-          Note newnote = Note(title: title, description: description);
+          Note newnote = Note(title, description);
           notedatabase.addNote(newnote);
         },
         backgroundColor: Colors.black,

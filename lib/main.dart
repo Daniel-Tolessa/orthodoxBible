@@ -1,3 +1,4 @@
+import 'screens/screens_widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(Bible());
@@ -31,7 +32,7 @@ class _bottomTabBarState extends State<bottomTabBar> {
   //var initialIndex = 0;
   int _selectedIndex = 0;
 
-  TabController _tabController;
+  late TabController _tabController;
   int _currentIndex = 0;
 
   @override

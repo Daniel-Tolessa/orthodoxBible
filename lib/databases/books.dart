@@ -1,7 +1,7 @@
 import 'database_packages.dart';
 
 class BookDatabase {
-  Database? _database;
+  late Database _database;
 
   Future openDb() async {
     _database = await openDatabase(
@@ -19,13 +19,13 @@ class BookDatabase {
     //getting a reference to the database
     await openDb();
 
-    return await _database!.insert("books", book.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    return await _database.insert("books", book.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Book>> getRecentBooks() async {
     await openDb();
 
-    final List<Map<String, dynamic>> maps = await _database!.query('books');
+    final List<Map<String, dynamic>> maps = await _database.query('books');
 
     return List.generate(maps.length, (i) {
       return Book(
@@ -41,12 +41,12 @@ class BookDatabase {
   Future<int> updateBook(Book book) async {
     await openDb();
 
-    return await _database!.update("books", book.toMap(), where: 'bookIndex = ?', whereArgs: [book.bookIndex],);
+    return await _database.update("books", book.toMap(), where: 'bookIndex = ?', whereArgs: [book.bookIndex],);
   }
 
   Future<void> deleteBooks() async {
     await openDb();
-    _database!.delete("books");
+    _database.delete("books");
   }
 
 }

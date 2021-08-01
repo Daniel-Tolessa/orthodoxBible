@@ -1,14 +1,19 @@
 import 'general_widgets.dart';
 class GridViewScreen extends StatelessWidget {
 
-  String jsonLocation;
-  String type_title;
+  late String jsonLocation;
+  late String type_title;
 
-  GridViewScreen({@required this.jsonLocation, @required this.type_title});
+  /// @jsonLocation: provides address and information for all the books including
+  ///                  new and old testament
+  /// @title: Whether it's an old or new testament
+  ///
+
+  GridViewScreen({required this.jsonLocation, required this.type_title});
 
   Future<List<Book>> fetchBooks (BuildContext context) async {//"json/bookjson.json
     final jsonstring = await DefaultAssetBundle.of(context).loadString(jsonLocation);
-    return bookFromJson(jsonstring);
+    return bookFromJson(jsonstring) ?? null;
   }
 
   @override
@@ -34,7 +39,7 @@ class GridViewScreen extends StatelessWidget {
                       crossAxisSpacing: 5,
                       childAspectRatio: (2 / 2.5),
                     ),
-                    itemCount: snapshot.data.length,
+                    itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       Book abook = snapshot.data[index];
                       return ElevatedButton(
