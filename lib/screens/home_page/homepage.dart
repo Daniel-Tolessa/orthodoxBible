@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     return new MaterialApp(
       home: HomeView(),
       debugShowCheckedModeBanner: false,
-      //themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.dark,
     );
   }
 }
@@ -32,10 +32,12 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
+
       appBar: AppBar(
         title: Text(""),
         elevation: 0.0,
         backgroundColor: Colors.grey[900],
+        //uses BookSearch in the appBar
         actions: [
           IconButton(
             onPressed: () {
@@ -45,10 +47,13 @@ class HomeView extends StatelessWidget {
           )
         ],
       ),
+
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
+
               //banner
               Container(
                 height: 200,
@@ -57,7 +62,9 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              //TODO add if statement so it only shows up if they are any books
+              //TODO add if statement so it continueReading shows up if they are any books
+
+              //continueReading
               Row(
                 children: [
                   Heading("Continue Reading"),
@@ -84,6 +91,9 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
+
+              //OldTestament
+
               Row(
                 children: [
                   Heading("Old Testaments"),
@@ -98,6 +108,8 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
+
+              //newTestaments
               Row(
                 children: [
                   Heading("New Testaments"),
@@ -109,9 +121,11 @@ class HomeView extends StatelessWidget {
                 height: 15,
               ),
               NewTestaments(),
-              // SizedBox(
-              //   height: 20,
-              // ),
+              SizedBox(
+                height: 20,
+              ),
+
+
             ],
           ),
         ),
@@ -121,6 +135,7 @@ class HomeView extends StatelessWidget {
 }
 
 
+//TODO instead of making it a flat banner make it a swipeable
 Widget banner() {
   var randomGenerator = Random();
   var number = randomGenerator.nextInt(4);

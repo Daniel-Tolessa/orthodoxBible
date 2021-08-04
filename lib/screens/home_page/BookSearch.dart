@@ -1,15 +1,16 @@
 import 'widgets/home_widgets.dart';
 
+///Provides Search functionality on the homepage Appbar
 class BookSearch extends SearchDelegate<Book> {
 
   List<Book> suggestion = [];
-  // function made to fetch from json
+  // function made to fetch oldTestaments books from json
   Future<List<Book>> fetchBooks (BuildContext context) async {
     final jsonstring = await DefaultAssetBundle.of(context).loadString("json/bookjson.json");
     return bookFromJson(jsonstring);
   }
 
-  // function made to fetch from json
+  // function made to fetch newTestaments books from json
   Future<List<Book>> fetchNewTesBooks (BuildContext context) async {
     final jsonstring = await DefaultAssetBundle.of(context).loadString("json/newTestamentJson.json");
     return bookFromJson(jsonstring);
@@ -42,32 +43,27 @@ class BookSearch extends SearchDelegate<Book> {
     throw ("");
   }
 
+  ///To build suggestions both the oldTestament and newTestament
+  ///  were merged together as a list
   @override
   Widget buildSuggestions(BuildContext context) {
 
+    //combines the old and new Testament books
     List<Book> combo = [];
     List<Book> oldTestaments = [];
     List<Book> newTestaments = [];
-    //combine old and new Testament books
+
     fetchBooks(context).then((returnedList) {
-      //oldTestaments = returnedList.toList();
       suggestion = returnedList.where((book) =>
           book.name.toLowerCase().contains(query.toLowerCase())).toList();
     });
 
     fetchNewTesBooks(context).then((returnedList) {
-      // newTestaments = returnedList.toList();
       suggestion = suggestion + returnedList.where((book) =>
           book.name.toLowerCase().contains(query.toLowerCase())).toList();
     });
 
-    //suggestion.shuffle();
-    //suggestion = suggestion.sublist(1, 5);
-
     combo = oldTestaments + newTestaments;
-    print (combo);
-    // suggestion = combo.where((book) =>
-    //         book.name.toLowerCase().contains(query.toLowerCase())).toList();
 
     return ListView.builder(
         itemCount: suggestion.length,

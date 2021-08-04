@@ -6,6 +6,7 @@ class viewAll extends StatelessWidget {
   viewAll({required this.jsonLocation, required this.type_title});
   @override
   Widget build(BuildContext context) {
+    //TODO implement see more button that it can always be at the same place
     final btn_width = MediaQuery.of(context).size.width;
     return Container(
       child: Align(

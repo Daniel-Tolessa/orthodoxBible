@@ -21,7 +21,7 @@ class OldTestaments extends StatelessWidget {
             builder: (context, AsyncSnapshot<List<Book>> snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
-                  //addAutomaticKeepAlives: false,
+                    addAutomaticKeepAlives: false,
                     shrinkWrap: true,
                     itemCount: snapshot.data!.length,
                     scrollDirection: Axis.horizontal,
@@ -32,13 +32,9 @@ class OldTestaments extends StatelessWidget {
                           primary: Colors.black,
                         ),
                         onPressed: () {
-                          //bookdatabase.deleteBooks();
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) =>
                                   Chapter(book: abook)));
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) =>
-                          //         noIdea()));
                         },
                         child: BookCover(abook, index),
                       );
@@ -48,7 +44,6 @@ class OldTestaments extends StatelessWidget {
               return CircularProgressIndicator();
             }
         )
-
     );
   }
 }

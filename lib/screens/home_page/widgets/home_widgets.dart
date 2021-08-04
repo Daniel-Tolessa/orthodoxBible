@@ -1,5 +1,5 @@
 export 'package:flutter/material.dart';
-export 'package:orthodoxbible/databases/books.dart';
+export 'package:orthodoxbible/databases/book_database.dart';
 export 'package:orthodoxbible/models/book.dart';
 export 'package:orthodoxbible/widgets/bookcover.dart';
 export 'package:orthodoxbible/widgets/gridview.dart';

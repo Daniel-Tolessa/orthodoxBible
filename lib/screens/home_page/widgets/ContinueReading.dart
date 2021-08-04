@@ -10,15 +10,10 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
 
   Widget build(BuildContext context) {
     setState(() {
-      //TODO figure out what goes in here
+      //TODO figure out what goes in here so it can update automatically
     });
     final BookDatabase bookdatabase = new BookDatabase();
     Book? book;
-    List<Book> recentBooks;
-    Future<List<Book>> fetchBooks (BuildContext context) async {
-      final jsonstring = await DefaultAssetBundle.of(context).loadString("json/continueReading.Json");
-      return bookFromJson(jsonstring);
-    }
     return Container(
         color: Colors.black,
         height: 180,
@@ -27,16 +22,14 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
             builder: (context, AsyncSnapshot<List<Book>> snapshot) {
 
               if (snapshot.hasData) {
-                    //List<Book>? reBooks = snapshot.data as List<Book>?;
                     List<Book>? reBooks = snapshot.data;
-                    // if (snapshot.data.length > 5) {
-                    //   copyHold = snapshot.data.getRange(0, 4);
-                    // }
+
+                    ///Render only the top 5 books
                     if (snapshot.data!.length >= 5) {
                       reBooks = snapshot.data!.getRange(snapshot.data!.length - 5, snapshot.data!.length).toList();
                     }
                     return ListView.builder(
-                      //addAutomaticKeepAlives: false,
+                        addAutomaticKeepAlives: false,
                         reverse: true,
                         shrinkWrap: true,//snapshot.data.length > 5 ? 5: snapshot.data.length
                         itemCount: reBooks!.length,

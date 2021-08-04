@@ -1,8 +1,16 @@
 import 'database_packages.dart';
 
+/*
+ * Book Database
+ */
+
 class BookDatabase {
   late Database _database;
 
+  /*
+      Opens a connection to the database - books.db &&
+      It creates books table with its properties as columns
+   */
   Future openDb() async {
     _database = await openDatabase(
         join(await getDatabasesPath(), 'books.db'),
@@ -13,7 +21,10 @@ class BookDatabase {
         });
   }
 
-  //insert a book
+  /*
+      Inserts a given Book to the database
+      If there is a book that exists with that name it will be replaced
+   */
   Future<int> insertBook(Book book) async {
 
     //getting a reference to the database
@@ -22,6 +33,9 @@ class BookDatabase {
     return await _database.insert("books", book.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
+  /*
+      returns query of all the books in the database
+   */
   Future<List<Book>> getRecentBooks() async {
     await openDb();
 
@@ -38,12 +52,19 @@ class BookDatabase {
     });
   }
 
+  /*
+    updates a given book with a matching name
+   */
   Future<int> updateBook(Book book) async {
     await openDb();
 
-    return await _database.update("books", book.toMap(), where: 'bookIndex = ?', whereArgs: [book.bookIndex],);
+    return await _database.update("books", book.toMap(), where: 'name = ?', whereArgs: [book.name],);
   }
 
+  /*
+    Completely removes all the books from the database
+     Primarily used for testing reasons -- not applicable in actual production
+   */
   Future<void> deleteBooks() async {
     await openDb();
     _database.delete("books");

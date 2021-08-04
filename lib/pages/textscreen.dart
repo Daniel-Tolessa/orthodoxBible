@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+/// Holds the text when one of the chapter's is selected
 class TextScreen extends StatefulWidget {
 
-  String textLocation;
+  final String textLocation;
   TextScreen({required this.textLocation});
   @override
   _TextScreenState createState() => _TextScreenState(textLocation);
@@ -14,6 +15,11 @@ class _TextScreenState extends State<TextScreen> {
   String textLocation;
   _TextScreenState(this.textLocation);
   String data = "";
+
+  /*
+     Helper method that
+       Gets the corresponding text for the given chapter -- from txt file
+   */
   fetchText() async {
     String text;
 
@@ -53,6 +59,8 @@ class _TextScreenState extends State<TextScreen> {
               ),
             ),
             Positioned(
+              //TODO replace manual numbers to fit any screen
+                // using mediaQuery
               top: height - 100,
               right: width - 90,
               width: 70,

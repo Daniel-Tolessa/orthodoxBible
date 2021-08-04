@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-// To parse this JSON data, do
-//
-//     final book = bookFromJson(jsonString);
+/*
+    Book model class
+ */
 
-
+//used to Parse JSON data, book = bookFromJson(jsonString)
 List<Book> bookFromJson(String str) => List<Book>.from(json.decode(str).map((x) => Book.fromJson(x)));
 
 String bookToJson(List<Book> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -25,6 +25,9 @@ class Book {
   int numChapters;
   int numClicks = 0;
 
+  /*
+     Converts a Json to a book model class
+   */
   factory Book.fromJson(Map<String, dynamic> json) => Book(
     json["name"],
     json["type"],
@@ -33,6 +36,9 @@ class Book {
     numClicks: json["numClicks"],
   );
 
+  /*
+     Converts a book object to a json
+   */
   Map<String, dynamic> toJson() => {
     "name": name,
     "type": type,
@@ -41,6 +47,9 @@ class Book {
     "numClicks": numClicks,
   };
 
+  /*
+   * returns a list of book objects
+   */
   Map<String, dynamic> toMap() {
     return {
       "name": name,
@@ -53,6 +62,6 @@ class Book {
 
   @override
   String toString() {
-    return "BookIndex: ${this.bookIndex}, NAMEE: ${this.name}, # Chapters: ${this.numChapters}, NumClicks: ${this.numClicks}";
+    return "BookIndex: ${this.bookIndex}, Name: ${this.name}, # Chapters: ${this.numChapters}, NumClicks: ${this.numClicks}";
   }
 }

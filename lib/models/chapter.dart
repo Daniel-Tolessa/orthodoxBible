@@ -1,21 +1,38 @@
 import 'model_libraries.dart';
 
+/*
+    Book model class && Writing files to the local device
+       to store information
+ */
 class Chapter extends StatelessWidget {
 
-  Book? book;
+  final Book? book;
 
+  //this.book -- book required to show relevant number of chapters
   Chapter({@required this.book});
 
+
+  /*
+    Finds the current local path
+    helps navigate where to store the file
+   */
   Future<String> get localpath async {
     final dir = await getExternalStorageDirectory();
     return dir!.path;
   }
 
+  /*
+     Gets a reference to the file's location
+   */
   Future<File> get localFile async {
     final path = await localpath;
-    return File("$path/ffffff.json");
+    return File("$path/chapters.json");
   }
 
+  /*
+     adds a given book to the local disk
+     //TODO figure out usability of writebook in other classes
+   */
   void writeBook(Book book) async {
     final file = await localFile;
 
@@ -23,6 +40,9 @@ class Chapter extends StatelessWidget {
     file.writeAsString(json);
   }
 
+
+  ///Build a listview of the relevant chapters for each book selected
+  ///
   @override
   Widget build(BuildContext context) {
     final BookDatabase bookdatabase = new BookDatabase();
@@ -51,13 +71,12 @@ class Chapter extends StatelessWidget {
                   bookdatabase.insertBook(book!);
                   book!.numClicks++;
                   bookdatabase.updateBook(book!);
-                  //print(writeBook(book));
                   Navigator.push(context,
+                      //TODO delete the extra comment
                       MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
-                        builder: (context) => TextScreen("texts/Genesis/chapter1/hello.txt"),
+                        builder: (context) => TextScreen("text_files/hello.txt"),
                       )
                   );
-
                 },
               );
             }

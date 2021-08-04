@@ -7,6 +7,9 @@ class MoreDetails extends StatefulWidget {
 
 class _MoreDetailsState extends State<MoreDetails> {
 
+  //TODO instead of using strings for each read each from a text file
+  //TODO create a text file for each
+  //TODO see how textscreen might help to render the texts
   static String terms = """
 Terms & Conditions
 By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, database rights and other intellectual property rights related to it, still belong to Daniel Tolessa.
@@ -68,15 +71,10 @@ It is also important to notice that, in opposition with other confessions, the O
       backgroundColor: Color(0xFF262b2d),
       body: ListView(
         children: [
-          //SizedBox(height: 430,),
-//          Padding(
-//              padding: EdgeInsets.only(left: 20),
-//              child: Text("Info", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),)
-//          ),
-          //Divider(thickness: 2, height: 2, color: Colors.white,),
           Padding(
             padding: EdgeInsets.only(top: 0),
             child: ExpansionPanelList(
+                //creates a list of expansionPanels to hold each detail section
                 children: items.map<ExpansionPanel>((Details item) {
                   return ExpansionPanel(
                     headerBuilder: (BuildContext context, bool isOpen) {
@@ -109,9 +107,11 @@ It is also important to notice that, in opposition with other confessions, the O
   }
 }
 
+///Details model class
 class Details {
   final String header;
   final String body;
+  //determines if the expansionPanel is expanded
   bool isOpen;
 
   Details({required this.header, required this.body, this.isOpen = false});

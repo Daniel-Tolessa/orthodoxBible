@@ -1,9 +1,12 @@
+/*
+  Note model class
+ */
 class Note {
   final int id;
   final String title;
   final String description;
 
-  //Note({required this.id, required this.title, required this.description});
+  //optional id value with a default value of 0
   Note(this.title, this.description, {this.id = 0});
 
   factory Note.fromMap(Map<String, dynamic> json) => new Note(

@@ -15,7 +15,10 @@ class bookmarkview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    //TODO change it into reorderable list view
+    //TODO change it into reorderable and swipeable tile
+    //TODO implement a swipeable tile that can delete when swiped
+    //needs to have a notification asking to verify their choice
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[900],

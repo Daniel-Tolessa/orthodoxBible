@@ -1,4 +1,7 @@
 import 'package:orthodoxbible/pages/pages_widgets.dart';
+
+///Interface after add button is clicked in the main note screen
+///
 class AddNotePage extends StatefulWidget {
   @override
   _AddNotePageState createState() => _AddNotePageState();
@@ -20,13 +23,6 @@ class _AddNotePageState extends State<AddNotePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.grey[700],
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.save, color: Colors.redAccent,),
-        //     //TODO saves the given note
-        //     onPressed: () {},
-        //   )
-        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
