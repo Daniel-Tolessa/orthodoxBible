@@ -28,24 +28,15 @@ class _NotesState extends State<Notes> {
           children: [
             FutureBuilder(
                 future: notedatabase.getNotes(),
-                builder: (context, snapshot) {
+                builder: (context, AsyncSnapshot<List<Note>> snapshot) {
                   if (snapshot.hasData) {
-                    // return Expanded(
-                    //   child: ListView.builder(
-                    //     itemCount: snapshot.data.length,
-                    //     itemBuilder: (builder, index) {
-                    //       Note note = snapshot.data[index];
-                    //       return Text(note.title);
-                    //     }
-                    //   ),
-                    // );
                     return ListView.builder(
                         reverse: true,
                         physics: BouncingScrollPhysics(),
                         shrinkWrap: true,
-                        itemCount: snapshot.data.length,
+                        itemCount: snapshot.data!.length,
                         itemBuilder: (builder, index) {
-                          Note note = snapshot.data[index];
+                          Note note = snapshot.data![index];
                           return Padding(
                             padding: EdgeInsets.all(5.0),
                             child: Column(

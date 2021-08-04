@@ -9,16 +9,16 @@ class OldTestaments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    final BookDatabase bookdatabase = new BookDatabase();
+    // double width = MediaQuery.of(context).size.width;
+    // double height = MediaQuery.of(context).size.height;
+    // final BookDatabase bookdatabase = new BookDatabase();
 
     return Container(
         color: Colors.black,
         height: 200,
         child: FutureBuilder(
             future: fetchBooks(context),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot<List<Book>> snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
                   //addAutomaticKeepAlives: false,
@@ -26,7 +26,7 @@ class OldTestaments extends StatelessWidget {
                     itemCount: snapshot.data!.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      Book abook = snapshot.data[index];
+                      Book abook = snapshot.data![index];
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Colors.black,

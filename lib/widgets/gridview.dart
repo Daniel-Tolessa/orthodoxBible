@@ -13,7 +13,7 @@ class GridViewScreen extends StatelessWidget {
 
   Future<List<Book>> fetchBooks (BuildContext context) async {//"json/bookjson.json
     final jsonstring = await DefaultAssetBundle.of(context).loadString(jsonLocation);
-    return bookFromJson(jsonstring) ?? null;
+    return bookFromJson(jsonstring);
   }
 
   @override
@@ -30,7 +30,7 @@ class GridViewScreen extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(5, 10, 5, 0),
         child: FutureBuilder(
             future: fetchBooks(context),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot<List<Book>> snapshot) {
               if (snapshot.hasData) {
                 return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -41,7 +41,7 @@ class GridViewScreen extends StatelessWidget {
                     ),
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      Book abook = snapshot.data[index];
+                      Book abook = snapshot.data![index];
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Colors.transparent,

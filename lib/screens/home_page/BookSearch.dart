@@ -30,7 +30,8 @@ class BookSearch extends SearchDelegate<Book> {
         progress: transitionAnimation,
       ),
       onPressed: () {
-        close(context, null);
+        //close(context, buildResults);
+        //TODO fix onPressed for build leading section
       },);
   }
 

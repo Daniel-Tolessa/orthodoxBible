@@ -16,7 +16,7 @@ class NewTestaments extends StatelessWidget {
         height: 200,
         child: FutureBuilder(
             future: fetchBooks(context),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot<List<Book>> snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
                   //addAutomaticKeepAlives: false,
@@ -24,7 +24,7 @@ class NewTestaments extends StatelessWidget {
                     itemCount: snapshot.data!.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      Book abook = snapshot.data[index];
+                      Book abook = snapshot.data![index];
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             elevation: 5,
