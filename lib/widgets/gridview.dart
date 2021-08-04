@@ -24,7 +24,7 @@ class GridViewScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(type_title, style: TextStyle(color: Colors.white),),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey[900],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(5, 10, 5, 0),

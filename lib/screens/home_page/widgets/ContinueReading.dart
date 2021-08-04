@@ -16,7 +16,7 @@ class _Kontinue_readingState extends State<Kontinue_reading> {
     Book? book;
     List<Book> recentBooks;
     Future<List<Book>> fetchBooks (BuildContext context) async {
-      final jsonstring = await DefaultAssetBundle.of(context).loadString("json/ContinueReading.Json");
+      final jsonstring = await DefaultAssetBundle.of(context).loadString("json/continueReading.Json");
       return bookFromJson(jsonstring);
     }
     return Container(

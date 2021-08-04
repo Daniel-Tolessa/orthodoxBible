@@ -3,7 +3,7 @@ import 'home_widgets.dart';
 class OldTestaments extends StatelessWidget {
   // function made to fetch from json
   Future<List<Book>> fetchBooks (BuildContext context) async {
-    final jsonstring = await DefaultAssetBundle.of(context).loadString("json/bookjson.json");
+    final jsonstring = await DefaultAssetBundle.of(context).loadString("json/oldbooks.json");
     return bookFromJson(jsonstring);
   }
 

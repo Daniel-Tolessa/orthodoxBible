@@ -18,7 +18,7 @@ class bookmarkview extends StatelessWidget {
     //TODO change it into reorderable list view
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.grey[900],
         title: Text("My BookMarks"),
         centerTitle: true,
       ),

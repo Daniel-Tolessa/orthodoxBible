@@ -16,7 +16,7 @@ class _NotesState extends State<Notes> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.grey[900],
         title: Text("My Notes"),
         centerTitle: true,
       ),

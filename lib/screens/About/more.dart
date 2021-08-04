@@ -62,7 +62,7 @@ It is also important to notice that, in opposition with other confessions, the O
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.grey[900],
         title: Center(child: Text("About")),
       ),
       backgroundColor: Color(0xFF262b2d),

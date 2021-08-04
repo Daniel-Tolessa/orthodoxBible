@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: Text(""),
         elevation: 0.0,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
             onPressed: () {
@@ -88,7 +88,7 @@ class HomeView extends StatelessWidget {
                 children: [
                   Heading("Old Testaments"),
                   SizedBox(width: 50),
-                  viewAll(jsonLocation: "json/bookjson.json", type_title: "Old Testaments",)
+                  viewAll(jsonLocation: "json/oldbooks.json", type_title: "Old Testaments",)
                 ],
               ),
               SizedBox(
@@ -102,7 +102,7 @@ class HomeView extends StatelessWidget {
                 children: [
                   Heading("New Testaments"),
                   SizedBox(width: 55),
-                  viewAll(jsonLocation: "json/newTestamentJson.json", type_title: "New Testaments",)
+                  viewAll(jsonLocation: "json/newbooks.json", type_title: "New Testaments",)
                 ],
               ),
               SizedBox(
@@ -128,7 +128,7 @@ Widget banner() {
   return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/poster" + number.toString() + ".jpg"),
+          image: AssetImage("assets/posters/poster" + number.toString() + ".jpg"),
           fit: BoxFit.fill,
         ),
       )
