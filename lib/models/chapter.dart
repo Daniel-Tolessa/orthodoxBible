@@ -74,7 +74,7 @@ class Chapter extends StatelessWidget {
                   Navigator.push(context,
                       //TODO delete the extra comment
                       MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
-                        builder: (context) => TextScreen("text_files/hello.txt"),
+                        builder: (context) => TextScreen("text_files/old/Genesis/chapter1.txt"),
                       )
                   );
                 },
