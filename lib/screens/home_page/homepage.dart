@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
 
 class HomeView extends StatelessWidget {
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -53,7 +54,6 @@ class HomeView extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-
               //banner
               Container(
                 height: 200,
@@ -64,36 +64,10 @@ class HomeView extends StatelessWidget {
               ),
               //TODO add if statement so it continueReading shows up if they are any books
 
-              //continueReading
-              Row(
-                children: [
-                  Heading("Continue Reading"),
-                  SizedBox(width: 60,),
-                  Text(
-                    "Filter by",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.filter_list_outlined, color: Colors.white,),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
+              //continueReading -- only shows if there has been any recent books
               Kontinue_reading(),
-              SizedBox(
-                height: 40,
-              ),
 
               //OldTestament
-
               Row(
                 children: [
                   Heading("Old Testaments"),
@@ -124,8 +98,6 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
             ],
           ),
         ),
@@ -137,13 +109,14 @@ class HomeView extends StatelessWidget {
 
 //TODO instead of making it a flat banner make it a swipeable
 Widget banner() {
-  var randomGenerator = Random();
-  var number = randomGenerator.nextInt(4);
+  //var randomGenerator = Random();
+  //var number = randomGenerator.nextInt(4);
 
   return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/posters/poster" + number.toString() + ".jpg"),
+          //image: AssetImage("assets/posters/poster" + number.toString() + ".jpg"),
+          image: AssetImage("assets/posters/poster.png"),
           fit: BoxFit.fill,
         ),
       )

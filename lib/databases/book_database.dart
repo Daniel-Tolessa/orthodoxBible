@@ -5,6 +5,7 @@ import 'database_packages.dart';
  */
 
 class BookDatabase {
+  int length = 0;
   late Database _database;
 
   /*
@@ -13,11 +14,11 @@ class BookDatabase {
    */
   Future openDb() async {
     _database = await openDatabase(
-        join(await getDatabasesPath(), 'books.db'),
+        join(await getDatabasesPath(), 'book_database.db'),
         version: 1,
         onCreate: (db, version) async {
           await db.execute(
-              "CREATE TABLE books(name TEXT PRIMARY KEY,numClicks INTEGER, type TEXT, numChapters INTEGER, bookIndex INTEGER)");
+              "CREATE TABLE books(name TEXT PRIMARY KEY,recentchapter INTEGER, type TEXT, numChapters INTEGER, bookIndex INTEGER)");
         });
   }
 
@@ -29,6 +30,8 @@ class BookDatabase {
 
     //getting a reference to the database
     await openDb();
+
+    length += 1;
 
     return await _database.insert("books", book.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
@@ -47,7 +50,7 @@ class BookDatabase {
         maps[i]["type"],
         maps[i]["bookIndex"],
         maps[i]["numChapters"],
-        numClicks: maps[i]["numClicks"],
+        recentchapter: maps[i]["recentchapter"],
       );
     });
   }
@@ -68,6 +71,11 @@ class BookDatabase {
   Future<void> deleteBooks() async {
     await openDb();
     _database.delete("books");
+    length = 0;
+  }
+
+  int recentbooks_length() {
+    return length;
   }
 
 }

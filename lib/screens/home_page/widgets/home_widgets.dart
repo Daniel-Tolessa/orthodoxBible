@@ -9,4 +9,5 @@ export 'package:orthodoxbible/screens/home_page/widgets/OldTestament.dart';
 export 'package:orthodoxbible/screens/home_page/widgets/NewTestament.dart';
 export 'package:orthodoxbible/models/chapter.dart';
 export 'package:orthodoxbible/screens/home_page/BookSearch.dart';
+export 'package:orthodoxbible/models/textscreen.dart';
 

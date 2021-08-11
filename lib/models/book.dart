@@ -15,7 +15,7 @@ class Book {
     this.type,
     this.bookIndex,
     this.numChapters,
-    {this.numClicks = 0}
+    {this.recentchapter = 0}
       //TODO check if numclicks resets to 0 for every book
       );
 
@@ -23,8 +23,7 @@ class Book {
   String type;
   int bookIndex;
   int numChapters;
-  int numClicks = 0;
-
+  int recentchapter = 0;
   /*
      Converts a Json to a book model class
    */
@@ -33,7 +32,7 @@ class Book {
     json["type"],
     json["bookIndex"],
     json["numChapters"],
-    numClicks: json["numClicks"],
+    recentchapter: json["recentchapter"],
   );
 
   /*
@@ -44,7 +43,7 @@ class Book {
     "type": type,
     "bookIndex": bookIndex,
     "numChapters": numChapters,
-    "numClicks": numClicks,
+    "recentchapter": recentchapter,
   };
 
   /*
@@ -56,12 +55,12 @@ class Book {
       "type": type,
       "bookIndex": bookIndex,
       "numChapters": numChapters,
-      "numClicks": numClicks,
+      "recentchapter": recentchapter,
     };
   }
 
   @override
   String toString() {
-    return "BookIndex: ${this.bookIndex}, Name: ${this.name}, # Chapters: ${this.numChapters}, NumClicks: ${this.numClicks}";
+    return "BookIndex: ${this.bookIndex}, Name: ${this.name}, # Chapters: ${this.numChapters}, recentchapter: ${this.recentchapter}";
   }
 }

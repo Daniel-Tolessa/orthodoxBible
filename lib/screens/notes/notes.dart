@@ -78,13 +78,13 @@ class _NotesState extends State<Notes> {
             )],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.orangeAccent,
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) =>  AddNotePage()));
-          },
-          child: Icon(Icons.add, color: Colors.white,)
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //     backgroundColor: Colors.orangeAccent,
+      //     onPressed: () {
+      //       Navigator.push(context, MaterialPageRoute(builder: (context) =>  AddNotePage()));
+      //     },
+      //     child: Icon(Icons.add, color: Colors.white,)
+      // ),
     );
   }
 }

@@ -4,370 +4,370 @@
     "type": "OLD",
     "bookIndex": 0,
     "numChapters": 50,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Exodus",
     "type": "OLD",
     "bookIndex": 16,
     "numChapters": 40,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Leviticus",
     "type": "OLD",
     "bookIndex": 50,
     "numChapters": 27,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Numbers",
     "type": "OLD",
     "bookIndex": 20,
     "numChapters": 36,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Deuteronomy",
     "type": "OLD",
     "bookIndex": 9,
     "numChapters": 34,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Joshua",
     "type": "OLD",
     "bookIndex": 25,
     "numChapters": 24,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Judges",
     "type": "OLD",
     "bookIndex": 7,
     "numChapters": 21,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Ruth",
     "type": "OLD",
     "bookIndex": 12,
     "numChapters": 4,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "1 Kingdoms (1 Samuel)",
     "type": "OLD",
     "bookIndex": 40,
     "numChapters": 31,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "2 Kingdoms (2 Samuel)",
     "type": "OLD",
     "bookIndex": 39,
     "numChapters": 24,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "3 Kingdoms (1 Kings)",
     "type": "OLD",
     "bookIndex": 24,
     "numChapters": 22,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "4 Kingdoms (2 Kings)",
     "type": "OLD",
     "bookIndex": 51,
     "numChapters": 25,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "1 Chronicles",
     "type": "OLD",
     "bookIndex": 34,
     "numChapters": 29,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "2 Chronicles",
     "type": "OLD",
     "bookIndex": 33,
     "numChapters": 36,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "1 Ezra",
     "type": "OLD",
     "bookIndex": 26,
     "numChapters": 9,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "2 Ezra",
     "type": "OLD",
     "bookIndex": 35,
     "numChapters": 10,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Nehemiah",
     "type": "OLD",
     "bookIndex": 28,
     "numChapters": 13,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Tobit",
     "type": "OLD",
     "bookIndex": 44,
     "numChapters": 14,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Judith",
     "type": "OLD",
     "bookIndex": 29,
     "numChapters": 16,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Esther",
     "type": "OLD",
     "bookIndex": 46,
     "numChapters": 10,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "1 Maccabees",
     "type": "OLD",
     "bookIndex": 22,
     "numChapters": 16,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "2 Maccabees",
     "type": "OLD",
     "bookIndex": 36,
     "numChapters": 15,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Psalms",
     "type": "OLD",
     "bookIndex": 37,
     "numChapters": 151,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Job",
     "type": "OLD",
     "bookIndex": 24,
     "numChapters": 42,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Wisdom of Solomon",
     "type": "OLD",
     "bookIndex": 17,
     "numChapters": 19,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Ecclesiastes",
     "type": "OLD",
     "bookIndex": 26,
     "numChapters": 12,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Song of Songs",
     "type": "OLD",
     "bookIndex": 27,
     "numChapters": 8,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Wisdom of Sirach",
     "type": "OLD",
     "bookIndex": 23,
     "numChapters": 51,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Hosea",
     "type": "OLD",
     "bookIndex": 38,
     "numChapters": 14,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Amos",
     "type": "OLD",
     "bookIndex": 11,
     "numChapters": 9,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Micah",
     "type": "OLD",
     "bookIndex": 41,
     "numChapters": 7,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Joel",
     "type": "OLD",
     "bookIndex": 12,
     "numChapters": 3,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Obadiah",
     "type": "OLD",
     "bookIndex": 40,
     "numChapters": 1,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Jonah",
     "type": "OLD",
     "bookIndex": 39,
     "numChapters": 4,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Nahum",
     "type": "OLD",
     "bookIndex": 24,
     "numChapters": 3,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Habakkuk",
     "type": "OLD",
     "bookIndex": 51,
     "numChapters": 3,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Zephaniah",
     "type": "OLD",
     "bookIndex": 34,
     "numChapters": 3,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Haggai",
     "type": "OLD",
     "bookIndex": 33,
     "numChapters": 2,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Zechariah",
     "type": "OLD",
     "bookIndex": 26,
     "numChapters": 14,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Malachi",
     "type": "OLD",
     "bookIndex": 35,
     "numChapters": 3,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Isaiah",
     "type": "OLD",
     "bookIndex": 28,
     "numChapters": 66,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Jeremiah",
     "type": "OLD",
     "bookIndex": 44,
     "numChapters": 52,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Baruch",
     "type": "OLD",
     "bookIndex": 29,
     "numChapters": 5,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Lamentations of Jeremiah",
     "type": "OLD",
     "bookIndex": 37,
     "numChapters": 5,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Epistle of Jeremiah",
     "type": "OLD",
     "bookIndex": 36,
     "numChapters": 1,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Epistle of Jeremiah",
     "type": "OLD",
     "bookIndex": 17,
     "numChapters": 1,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Ezekiel",
     "type": "OLD",
     "bookIndex": 24,
     "numChapters": 48,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Daniel",
     "type": "OLD",
     "bookIndex": 26,
     "numChapters": 12,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Susanna",
     "type": "OLD",
     "bookIndex": 23,
     "numChapters": 1,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Bel and the Dragon",
     "type": "OLD",
     "bookIndex": 38,
     "numChapters": 1,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "Proverbs of Solomon",
     "type": "OLD",
     "bookIndex": 11,
     "numChapters": 29,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "3 Ezra",
     "type": "OLD",
     "bookIndex": 16,
     "numChapters": 16,
-    "numClicks": 0
+    "recentchapter": 0
   },
   {
     "name": "4 Maccabees",
     "type": "OLD",
     "bookIndex": 9,
     "numChapters": 18,
-    "numClicks": 0
+    "recentchapter": 0
   }
 ]

@@ -27,6 +27,7 @@ class bookmarkview extends StatelessWidget {
       ),
       backgroundColor: Color(0xFF262b2d),
       body: ListView(
+        cacheExtent: 250,
         children: List.generate(50, (index) => ListTile(
           title: Text("Note $index ", style: TextStyle(color: Colors.white),),
           leading: Icon(Icons.shuffle, color: Colors.white,),

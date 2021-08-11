@@ -6,12 +6,13 @@ class OldTestaments extends StatelessWidget {
     final jsonstring = await DefaultAssetBundle.of(context).loadString("json/oldbooks.json");
     return bookFromJson(jsonstring);
   }
-
+  int _herocounter = 0;
   @override
   Widget build(BuildContext context) {
     // double width = MediaQuery.of(context).size.width;
     // double height = MediaQuery.of(context).size.height;
-    // final BookDatabase bookdatabase = new BookDatabase();
+    _herocounter++;
+    final BookDatabase bookdatabase = new BookDatabase();
 
     return Container(
         color: Colors.black,
@@ -27,16 +28,20 @@ class OldTestaments extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       Book abook = snapshot.data![index];
-                      return ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
+                      return Hero(
+                        tag: "book$index",
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.black,
+                          ),
+                          onPressed: () {
+                            //bookdatabase.deleteBooks();
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) =>
+                                    Chapter(book: abook)));
+                          },
+                          child: BookCover(abook, index),
                         ),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) =>
-                                  Chapter(book: abook)));
-                        },
-                        child: BookCover(abook, index),
                       );
                     }
                 );
