@@ -40,11 +40,13 @@ class Chapter extends StatelessWidget {
     file.writeAsString(json);
   }
 
+  int _herocounter = 0;
 
   ///Build a listview of the relevant chapters for each book selected
   ///
   @override
   Widget build(BuildContext context) {
+    _herocounter++;
     final BookDatabase bookdatabase = new BookDatabase();
 
     return Scaffold(
@@ -56,30 +58,34 @@ class Chapter extends StatelessWidget {
       ),
       body: Container(
         color: Colors.black38,
-        child: ListView.separated(
-            itemCount: book!.numChapters,
-            separatorBuilder: (BuildContext context, int index) => Divider(thickness: 2.5, height: 5, color: Colors.white,),
-            itemBuilder: (Context, index) {
-              return ListTile(
-                trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
-                tileColor: Colors.black,
-                enabled: true,
-                title: Text("Chapter " + (index + 1).toString(), style: TextStyle(color: Colors.white),),
+        child: Hero(
+          tag: "chapter$_herocounter",
+          child: ListView.separated(
+              itemCount: book!.numChapters,
+              separatorBuilder: (BuildContext context, int index) => Divider(thickness: 2.5, height: 5, color: Colors.white,),
+              itemBuilder: (Context, index) {
+                return ListTile(
+                  trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
+                  tileColor: Colors.black,
+                  enabled: true,
+                  title: Text("Chapter " + (index + 1).toString(), style: TextStyle(color: Colors.white),),
 
-                onTap: () {
-                  writeBook(book!);
-                  bookdatabase.insertBook(book!);
-                  book!.numClicks++;
-                  bookdatabase.updateBook(book!);
-                  Navigator.push(context,
-                      //TODO delete the extra comment
-                      MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
-                        builder: (context) => TextScreen("text_files/old/Genesis/chapter1.txt"),
-                      )
-                  );
-                },
-              );
-            }
+                  onTap: () {
+                    writeBook(book!);
+                    bookdatabase.insertBook(book!);
+                    book!.recentchapter = index + 1;
+                    //book!.numClicks++;
+                    bookdatabase.updateBook(book!);
+                    Navigator.push(context,
+                        //TODO delete the extra comment
+                        MaterialPageRoute(//TextScreen(textLocation: "texts/Genesis/chapter1/hello.txt")
+                          builder: (context) => TextScreen("text_files/sample.txt"),
+                        )
+                    );
+                  },
+                );
+              }
+          ),
         ),
       ),
     );

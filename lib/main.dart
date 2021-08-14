@@ -60,7 +60,6 @@ class _bottomTabBarState extends State<bottomTabBar> {
         index: _selectedIndex,
         children: _pages,
       ),
-      //Need to hide the bar when scrolling down
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueAccent,
         selectedItemColor: Colors.blueAccent,

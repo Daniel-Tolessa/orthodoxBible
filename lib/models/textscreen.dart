@@ -56,6 +56,7 @@ class _TextScreenState extends State<TextScreen> {
               right: width - 90,
               width: 70,
               child: FloatingActionButton(
+                heroTag: "btn1",
                   backgroundColor: Colors.transparent,
                   onPressed: () {},
                   child: Column(
@@ -69,6 +70,7 @@ class _TextScreenState extends State<TextScreen> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+            heroTag: "btn2",
             backgroundColor: Colors.transparent,
             onPressed: () {},
             child: Column(
